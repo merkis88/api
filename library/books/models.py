@@ -4,7 +4,7 @@ from authors.models import Author
 class Book(models.Model):
     title = models.CharField(max_length=100)
     author = models.ForeignKey(Author, on_delete=models.CASCADE, related_name="books")
-    year = models.PositiveIntegerField()
+    year = models.IntegerField(null=True, blank=True, default=None)
     genre = models.CharField(max_length=100)
     category = models.CharField(max_length=100)
     publisher = models.CharField(max_length=100)
